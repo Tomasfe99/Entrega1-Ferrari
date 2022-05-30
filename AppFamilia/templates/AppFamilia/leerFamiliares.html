@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+Lista de Familiares  
+<body>
+    <button>
+        <a href="{% url 'familiarFormulario' %}"> Añadir familiar </a>
+          
+    </button>
+    
+    <button>
+    <a href="{% url 'BusquedaFamiliar' %}"> Buscar familiar particular </a>
+    </button>
+    <button>
+    <a href="{% url 'Inicio' %}"> Volver al inicio </a>
+    </button>
+        
+    {% for p in familiares %}
+    
+        <li>{{p}}</li>
+    
+        <button>
+            <a href="{% url 'BorrarFamiliares' p.nombre %}"> Borrar </a>
+            
+        </button>
+    
+        <button>
+        <a href="{% url 'EditarFamiliares' p.nombre %}"> Editar </a>
+        </button>
+    
+    {% endfor %}
+</body>
+</html>
+

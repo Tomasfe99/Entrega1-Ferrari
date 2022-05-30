@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <p> Estamos buscando el familiar: {{nombre}}</p>
-    {% if familiares %}
+    <p> Estamos buscando el musico: {{nombre}}</p>
+    {% if musicos %}
     <ul>
-    {% for xx in familiares%}
+    {% for xx in musicos%}
         
-        <li> {{xx.edad}} </li>
-        <li> {{xx.nacimiento}} </li>
-        <a href="{%url 'Inicio' %}">Volver al inicio</a>
+        <li> {{xx.genero}} </li>
+        <a href="{% url 'ListMusicos' %}">Regresar</a>
+        
     {% endfor %}
     </ul>
     {% endif %}

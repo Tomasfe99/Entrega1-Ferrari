@@ -7,14 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <p> Estamos buscando el familiar: {{nombre}}</p>
-    {% if familiares %}
+    <p> Estamos buscando el equipo: {{nombre}}</p>
+    {% if equipos %}
     <ul>
-    {% for xx in familiares%}
+    {% for xx in equipos%}
         
-        <li> {{xx.edad}} </li>
-        <li> {{xx.nacimiento}} </li>
-        <a href="{%url 'Inicio' %}">Volver al inicio</a>
+        <li> {{xx.pais}} </li>
+        <img src="{{xx.imagen1.url}}" alt="No hay imagen">
+        <a href="{% url 'ListEquipos' %}">Regresar</a>
+       
+        
     {% endfor %}
     </ul>
     {% endif %}

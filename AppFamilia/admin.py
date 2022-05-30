@@ -6,5 +6,6 @@ from AppFamilia.models import *
 admin.site.register(Familiar)
 admin.site.register(Equipo)
 admin.site.register(Musico)
+admin.site.register(Avatar)
 
 

@@ -24,7 +24,19 @@
                 <a class="navbar-brand" href="{% url 'Familiares' %}">Familiares</a>
                 <a class="navbar-brand" href="{% url 'Equipos' %}">Equipos</a>
                 <a class="navbar-brand" href="{% url 'Musicos' %}">Musicos</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                {% if user.is_anonymous %}
+                <a class="btn btn-primary" href="{% url 'login' %}">Iniciar sesion</a>
+                <a class="btn btn-primary" href="{% url 'register' %}">Registrarse</a>
+                {% endif %}
+                
+                {% if user.is_authenticated %}
+                <p class="text-muted small mb-4 mb-lg-0">Hola {{user.username}}</p>
+                {% block contenidoAvatar%}
+
+                {% endblock %}
+                <a class="btn btn-primary" href="{% url 'logout' %}">Cerrar sesion</a>
+                <a class="btn btn-primary" href="{% url 'EditarUsuario' %}">Editar usuario</a>
+                {% endif %}
             </div>
         </nav>
         <!-- Masthead-->
@@ -34,6 +46,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
+                          
                             {% block contenidoModificable%}
 
                             {% endblock %}
@@ -52,14 +65,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        {% block contenidoModificable2%}
+
+                            {% endblock %}
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item"><a href="{% url 'About' %}">About</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                            
+                            
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
                     </div>
