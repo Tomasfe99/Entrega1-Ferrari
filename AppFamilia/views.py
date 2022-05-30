@@ -103,7 +103,7 @@ def equipoFormulario(request):
         print(miFormulario1)
         if miFormulario1.is_valid():
             informacion= miFormulario1.cleaned_data
-            equipo= Equipo(nombre1= informacion["nombre"], pais= informacion["pais"], imagen1= informacion["imagen"])
+            equipo= Equipo(nombre1= informacion["nombre1"], pais= informacion["pais"], imagen1= informacion["imagen1"])
             equipo.save()
             return render(request, "AppFamilia/inicio.html")
     else:

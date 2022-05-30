@@ -22,7 +22,7 @@ urlpatterns = [
 
     path("equipo/lista", views.EquipoList.as_view(), name= "ListEquipos"),
     path(r"^(?P<pk>\d+)$", views.EquipoDetalle.as_view(), name = "DetailEquipos"),
-    path(r"^nuevo$", views.EquipoCreacion.as_view(), name= "NewEquipos"),
+    path(r"^nuevo$", views.equipoFormulario, name= "NewEquipos"),
     path(r"^editar/(?P<pk>\d+)$", views.EquipoUpdate.as_view(), name= "EditEquipos"),
     path(r"^borrar/(?P<pk>\d+)$", views.EquipoDelete.as_view(), name="DeleteEquipos"),
 
