@@ -10,7 +10,7 @@
     {%if miFormulario1.errors %}
     <p style="color:red">Datos incorrectos</p>
     {% endif %}
-    <form action=""method="POST"> {%csrf_token%}
+    <form action="" enctype="multipart/form-data" method="POST"> {% csrf_token %}
         <table>
             {{miFormulario1.as_table}}
         </table>

@@ -99,7 +99,7 @@ def familiarFormulario(request):
 
 def equipoFormulario(request):
     if request.method == "POST":
-        miFormulario1= EquipoFormulario(request.POST)
+        miFormulario1= EquipoFormulario(request.POST, request.FILES)
         print(miFormulario1)
         if miFormulario1.is_valid():
             informacion= miFormulario1.cleaned_data

@@ -2,15 +2,17 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+from AppFamilia.models import Equipo
+
 class FamiliarFormulario(forms.Form):
     nombre= forms.CharField()
     edad= forms.IntegerField()
     nacimiento= forms.DateField()
 
-class EquipoFormulario(forms.Form):
-    nombre= forms.CharField()
-    pais= forms.CharField()
-    imagen1= forms.ImageField()
+class EquipoFormulario(forms.ModelForm):
+    class Meta:
+        model= Equipo
+        fields=["nombre1", "pais", "imagen1"]
 
 class MusicoFormulario(forms.Form):
     nombre= forms.CharField()

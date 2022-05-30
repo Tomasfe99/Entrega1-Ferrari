@@ -16,7 +16,7 @@ class Equipo(models.Model):
         return f"Nombre:{self.nombre1} - Pais:{self.pais}"
     nombre1= models.CharField(max_length=40)
     pais= models.CharField(max_length=40)
-    imagen1= models.ImageField(upload_to= "equipos", null=True, blank=True)
+    imagen1= models.ImageField(upload_to= "equipos", null=True)
 
 class Musico(models.Model):
     def __str__(self):
